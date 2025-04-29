@@ -1,0 +1,76 @@
+<div class="form-container">
+  <h2>INSCRIPTION</h2>
+  <form [formGroup]="inscriptionForm" (ngSubmit)="onSubmit()">
+
+    <!-- Nom -->
+    <div>
+      <label for="nom">Nom:</label>
+      <div class="input-field">
+        <input id="nom" type="text" formControlName="nom" placeholder="Entrer votre nom"/>
+      </div>
+      <small *ngIf="inscriptionForm.get('nom')?.invalid && inscriptionForm.get('nom')?.touched">
+        Le nom est obligatoire.
+      </small>
+    </div> <br>
+
+    <!-- Prénom -->
+    <div>
+      <label for="prenom">Prénom:</label>
+      <div class="input-field">
+        <input id="prenom" type="text" formControlName="prenom" placeholder="Entrer votre prénom"/>
+      </div>
+      <small *ngIf="inscriptionForm.get('prenom')?.invalid && inscriptionForm.get('prenom')?.touched">
+        Le prénom est obligatoire.
+      </small>
+    </div><br>
+
+    <!-- Username -->
+    <div>
+      <label for="username">Username:</label>
+      <div class="input-field">
+        <input id="username" type="text" formControlName="username" placeholder="Entrer votre username"/>
+      </div>
+      <small *ngIf="inscriptionForm.get('username')?.invalid && inscriptionForm.get('username')?.touched">
+        Le username est obligatoire.
+      </small>
+    </div><br>
+
+    <!-- Email -->
+    <div>
+      <label for="email">Email:</label>
+      <div class="input-field">
+        <input id="email" type="email" formControlName="email" placeholder="Entrer votre email"/>
+      </div>
+      <small *ngIf="inscriptionForm.get('email')?.invalid && inscriptionForm.get('email')?.touched">
+        Entrez un email valide.
+      </small>
+    </div><br>
+
+    <!-- Mot de passe -->
+    <div>
+      <label for="password">Mot de passe:</label>
+      <div class="input-field">
+        <input id="password" type="password" formControlName="password" placeholder="Entrer votre mot de passe"/>
+      </div>
+      <small *ngIf="inscriptionForm.get('password')?.invalid && inscriptionForm.get('password')?.touched">
+        Le mot de passe doit contenir au moins 6 caractères.
+      </small>
+    </div><br>
+
+    <!-- Confirmation du mot de passe -->
+    <div>
+      <label for="confirmPassword">Confirmer mot de passe:</label>
+      <div class="input-field">
+        <input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Confirmer votre mot de passe"/>
+      </div>
+      <small *ngIf="inscriptionForm.get('confirmPassword')?.invalid && inscriptionForm.get('confirmPassword')?.touched">
+        Les mots de passe doivent correspondre.
+      </small>
+    </div>
+
+    <!-- Bouton d'inscription -->
+    <button class="btn btn-primary btn-block mt-4 w-100" type="submit" [disabled]="inscriptionForm.invalid">
+      S'inscrire
+    </button>
+  </form>
+</div>

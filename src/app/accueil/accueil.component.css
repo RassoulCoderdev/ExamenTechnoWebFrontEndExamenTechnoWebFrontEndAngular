@@ -1,0 +1,47 @@
+header {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+header h5 {
+  line-height: 1.2;
+}
+.logo{
+  background-image: url('../admin/img/unchk.png');
+  width: 500px;
+  height: 100px;
+}
+.femme{
+  margin-top: -90px;
+  margin-bottom: -30px;
+  margin-right: -80px;
+  background-image: url('../admin/img/fem.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 480px;
+  height: 400px;
+
+
+}
+.flex-shrink-0 {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  font-family: Arial, sans-serif;
+}
+
+button {
+  font-size: 18px;
+  border-radius: 8px;
+}
+.py-5{
+  height: 370px;
+}
+.ms-4{
+  margin-top: -30px;
+}

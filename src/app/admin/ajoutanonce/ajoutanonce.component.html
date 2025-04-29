@@ -1,0 +1,41 @@
+<div class="container">
+  <div>
+    <h2>Ajouter un Cours :</h2>
+  </div>
+
+  <form #annonceForm="ngForm" (ngSubmit)="addAnnonce()">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Nom Cours</label>
+      <input type="text" [(ngModel)]="annonces.titre" name="titre" class="form-control" required>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Description du cours</label>
+      <input type="text" [(ngModel)]="annonces.description" name="description" class="form-control" required>
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Debut des cours</label>
+      <input type="date" [(ngModel)]="annonces.annedebut" name="annedebut" class="form-control" required>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Fin des cours</label>
+      <input type="date" [(ngModel)]="annonces.datepubli" name="datedefin" class="form-control" required>
+    </div>
+
+    <!-- Sélection du statut de l'annonce -->
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Statut du cours</label>
+      <select class="form-control" [(ngModel)]="annonces.statutdto" name="statut" required>
+        <option *ngFor="let statut of statutOptions" [value]="statut">
+          {{ statut }}
+        </option>
+      </select>
+    </div>
+
+    <div class="mt-2">
+      <button type="submit" class="btn btn-success">Ajouter</button>
+    </div>
+  </form>
+</div>

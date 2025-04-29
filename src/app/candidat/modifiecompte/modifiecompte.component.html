@@ -1,0 +1,97 @@
+<div class="container-fluid" >
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-none d-md-block bg-custom-blue sidebar text-white vh-100 shadow-lg">
+      <div class="sidebar-sticky px-3 py-4"><br><br><br><br><hr>
+        <h5 class="text-center mb-4">Offres et demandes</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/candidat">
+              <i class="fas fa-plus-circle me-2"></i> Offres actuelles
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/mescandidatures">
+              <i class="fas fa-plus-circle me-2"></i> Mes candidatures
+            </a>
+          </li>
+        </ul>
+        <hr class="bg-light my-4">
+        <h5 class="text-center mb-4"> Mon compte</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="#">
+              <i class="fas fa-plus-circle me-2"></i> Mon compte
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/modifiecompte">
+              <i class="fas fa-list me-2"></i> Modifier mon compte
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/accueil">
+              <i class="fas fa-home me-2"></i> Deconnecter
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main" class="col-md-10 ms-sm-auto px-4" style="height: 130px; background-color: rgb(30, 189, 64);">
+      <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center py-3 px-4 shadow-sm">
+    <!-- Logo/Photo -->
+    <div class="d-flex align-items-center" >
+      <img class="" >
+    </div>
+    <div class="d-flex align-items-center" >
+      <img class="ab" >
+    </div>
+    <!-- Navigation Buttons -->
+    <div>
+      <button class="btn btn-outline-primary me-2" style="color: white;">Accueil</button>
+      <button class="btn btn-outline-success me-2" style="color: white;">Contact</button>
+      <button class="btn btn-outline-secondary" style="color: white;" >Rechercher</button>
+    </div>
+  </header>
+
+  
+<div class="container">
+  <div class="profile-card">
+    <h2>Modifier Profil</h2>
+    <div class="avatar">
+      <!-- Vous pouvez insérer ici l'image ou le composant d'avatar -->
+    </div>
+
+    <form [formGroup]="modifiecompteForm" (ngSubmit)="onSubmit()">
+      <label for="password">Mot de Passe</label>
+      <div class="password-wrapper">
+        <input [type]="hidePassword ? 'password' : 'text'" id="password" class="form-control" formControlName="password">
+        <span class="toggle-password" (click)="togglePassword('password')" style="cursor: pointer;">👁️</span>
+      </div>
+      <div *ngIf="modifiecompteForm.get('password')?.invalid && (modifiecompteForm.get('password')?.touched || modifiecompteForm.get('password')?.dirty)">
+        <small *ngIf="modifiecompteForm.get('password')?.errors?.['required']" style="color: red;">Le mot de passe est requis.</small>
+        <small *ngIf="modifiecompteForm.get('password')?.errors?.['minlength']" style="color: red;">Au moins 6 caractères requis.</small>
+      </div>
+
+      <label for="confirmPassword">Confirmer le Mot de Passe</label>
+      <div class="password-wrapper">
+        <input [type]="hideConfirmPassword ? 'password' : 'text'" id="confirmPassword" class="form-control" formControlName="confirmPassword">
+        <span class="toggle-password" (click)="togglePassword('confirmPassword')" style="cursor: pointer;">👁️</span>
+      </div>
+      <div *ngIf="modifiecompteForm.get('confirmPassword')?.invalid && (modifiecompteForm.get('confirmPassword')?.touched || modifiecompteForm.get('confirmPassword')?.dirty)">
+        <small *ngIf="modifiecompteForm.get('confirmPassword')?.errors?.['required']" style="color: red;">La confirmation du mot de passe est requise.</small>
+        <small *ngIf="modifiecompteForm.get('confirmPassword')?.errors?.['mismatch']" style="color: red;">Les mots de passe ne correspondent pas.</small>
+      </div>
+
+      <div class="buttons mt-3">
+        <button type="button" class="btn btn-secondary">Annuler</button>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>

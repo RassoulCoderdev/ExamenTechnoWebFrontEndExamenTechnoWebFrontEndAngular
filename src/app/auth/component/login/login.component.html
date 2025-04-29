@@ -1,0 +1,42 @@
+<div class="outer">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="panel">
+      <div class="panel-heading text-center">
+        <h3>SERVICE CENTRAL D'AUTHENTIFICATION</h3>
+      </div>
+      <div class="panel-body">
+        @if(erreur==1) {
+          <div class="alert alert-danger text-center">
+            <strong>Login ou mot de passe erronés..</strong>
+          </div>
+        }
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <div class="input-field">
+              <span class="fa fa-user p-2"></span>
+              <input type="text" formControlName="username" placeholder="Nom utilisateur" class="form-control">
+            </div>
+            <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
+              L'Email est incorrect.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-field">
+              <span class="fa fa-lock p-2"></span>
+              <input type="password" formControlName="password" placeholder="Mot de passe" class="form-control">
+            </div>
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+              Le mot de passe doit avoir au moins 6 caractères.
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success btn-block" [disabled]="loginForm.invalid">Se Connecter</button>
+        </form>
+
+        <div *ngIf="loginError" class="error-message text-center mt-2">{{ loginError }}</div>
+      </div>
+    </div>
+  </div>
+</div>

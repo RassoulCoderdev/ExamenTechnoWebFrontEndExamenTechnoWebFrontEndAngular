@@ -1,0 +1,111 @@
+<div class="container-fluid" >
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-none d-md-block bg-custom-blue sidebar text-white vh-100 shadow-lg">
+      <div class="sidebar-sticky px-3 py-4"><br><br><br><br><hr>
+        <h5 class="text-center mb-4">Offres et demandes</h5>
+        <ul class="nav flex-column">
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/mescandidatures">
+              <i class="fas fa-plus-circle me-2"></i> Mes cours
+            </a>
+          </li>
+        </ul>
+        <hr class="bg-light my-4">
+        <h5 class="text-center mb-4"> Mon compte</h5>
+        <ul class="nav flex-column">
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/accueil">
+              <i class="fas fa-home me-2"></i> Deconnecter
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main" class="col-md-10 ms-sm-auto px-4" style="height: 130px; background-color: rgb(30, 189, 64);">
+      <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center py-3 px-4 shadow-sm">
+    <!-- Logo/Photo -->
+    <div class="d-flex align-items-center" >
+      <img class="" >
+    </div>
+    <div class="d-flex align-items-center" >
+      <img class="ab" >
+    </div>
+    <!-- Navigation Buttons -->
+    <div>
+      <button class="btn btn-outline-primary me-2" style="color: white;">Accueil</button>
+      <button class="btn btn-outline-success me-2" style="color: white;">Contact</button>
+      <button class="btn btn-outline-secondary" style="color: white;" >Rechercher</button>
+    </div>
+  </header>
+
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+    <h2 class="font-weight-bold">Offres Actuelles</h2>
+  </div>
+
+
+      <!-- Stats Section -->
+       <!-- Stats Cards -->
+    <!-- Stats Section -->
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card text-center bg-warning text-white shadow-sm rounded-lg">
+          <div class="card-body">
+            <i class="fas fa-users fa-3x mb-3"></i>
+            <h5 class="card-title">26 Etudiants</h5>
+            <p class="card-text">Plus d'infos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center bg-primary text-white shadow-sm rounded-lg">
+          <div class="card-body">
+            <i class="fas fa-file-alt fa-3x mb-3"></i>
+            <h5 class="card-title">6 Cours</h5>
+            <p class="card-text">Plus d'infos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center bg-success text-white shadow-sm rounded-lg">
+          <div class="card-body">
+            <i class="fas fa-bullhorn fa-3x mb-3"></i>
+            <h5 class="card-title">8 Commentaires</h5>
+            <p class="card-text">Plus d'infos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+      <h2 class="font-weight-bold">Veuillez postuler pour une Annoces</h2>
+    </div>
+
+    <!-- Campaigns Section -->
+    <div class="row">
+      <div class="col-md-6 mb-3" *ngFor="let campaign of campaigns">
+        <div class="card">
+          <div class="card-header text-white {{ campaign.bgClass }}">
+            {{ campaign.level }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ campaign.title }}</h5>
+            <p class="card-text">Besoin de {{ campaign.needed }}</p>
+            <p class="text-muted">Année académique : {{ campaign.year }}</p>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-outline-secondary">Voir les détails</button>
+              <button class="btn btn-success"><a [routerLink]="['/postulcandidat', campaign.id]" routerLinkActive="router-link-active"  style="text-decoration: none; color:black">Postuler</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+

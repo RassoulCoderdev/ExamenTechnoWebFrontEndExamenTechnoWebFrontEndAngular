@@ -1,0 +1,56 @@
+<div class="register-container">
+  <div class="register-panel">
+    <h2>Créer un Compte</h2>
+    <form [formGroup]="inscriptionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input id="nom" type="text" formControlName="nom" placeholder="Votre nom" />
+        <small *ngIf="inscriptionForm.get('nom')?.invalid && inscriptionForm.get('nom')?.touched">Nom requis</small>
+      </div>
+
+      <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input id="prenom" type="text" formControlName="prenom" placeholder="Votre prénom" />
+        <small *ngIf="inscriptionForm.get('prenom')?.invalid && inscriptionForm.get('prenom')?.touched">Prénom requis</small>
+      </div>
+
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur</label>
+        <input id="username" type="text" formControlName="username" placeholder="Votre username" />
+        <small *ngIf="inscriptionForm.get('username')?.invalid && inscriptionForm.get('username')?.touched">Username requis</small>
+      </div>
+
+      <div class="form-group">
+        <label for="ine">INE</label>
+        <input id="ine" type="text" formControlName="ine" placeholder="Votre INE" />
+        <small *ngIf="inscriptionForm.get('ine')?.invalid && inscriptionForm.get('ine')?.touched">INE requis</small>
+      </div>
+
+      <div class="form-group">
+        <label for="promo">Promotion</label>
+        <input id="promo" type="text" formControlName="promo" placeholder="Votre promotion" />
+        <small *ngIf="inscriptionForm.get('promo')?.invalid && inscriptionForm.get('promo')?.touched">Promotion requise</small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="Votre email" />
+        <small *ngIf="inscriptionForm.get('email')?.invalid && inscriptionForm.get('email')?.touched">Email invalide</small>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input id="password" type="password" formControlName="password" placeholder="Votre mot de passe" />
+        <small *ngIf="inscriptionForm.get('password')?.invalid && inscriptionForm.get('password')?.touched">Minimum 6 caractères</small>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirmer mot de passe</label>
+        <input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Confirmez votre mot de passe" />
+        <small *ngIf="inscriptionForm.get('confirmPassword')?.invalid && inscriptionForm.get('confirmPassword')?.touched">Les mots de passe doivent correspondre</small>
+      </div>
+
+      <button type="submit" [disabled]="inscriptionForm.invalid">S'inscrire</button>
+    </form>
+  </div>
+</div>

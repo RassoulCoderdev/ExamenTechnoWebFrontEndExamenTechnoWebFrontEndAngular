@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../gestion-recrutement-usertoken/userToken"
+		}
+	],
+	"settings": {}
+}

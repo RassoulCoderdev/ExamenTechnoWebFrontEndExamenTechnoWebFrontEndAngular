@@ -1,0 +1,94 @@
+.ab{
+  background: url('../../admin/img/unchk.png');
+  width: 500px;
+  height: 100px;
+}
+.card {
+  border-radius: 0.5rem;
+}
+.card-header {
+  font-weight: bold;
+}
+aside {
+  min-width: 200px;
+}
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  padding-top: 0px;
+}
+
+.sidebar .nav-link {
+  font-size: 13.5px;
+  padding: 10px;
+}
+.bg-custom-blue {
+  background-color: black; /* Couleur bleue personnalisée */
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  text-align: center;
+}
+
+.avatar img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+  margin: 10px;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 30px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.avatar{
+  align-items: center;
+  text-align: center;
+  margin-left: 140px;
+  background: url('../../../assets/f.jpg');
+  width: 140px;
+  height: 100px;
+}
+

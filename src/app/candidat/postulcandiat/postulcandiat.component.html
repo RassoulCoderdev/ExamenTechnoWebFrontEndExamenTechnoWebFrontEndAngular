@@ -1,0 +1,149 @@
+<div class="container-fluid" >
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-none d-md-block bg-custom-blue sidebar text-white vh-100 shadow-lg">
+      <div class="sidebar-sticky px-3 py-4"><br><br><br><br><hr>
+        <h5 class="text-center mb-4">Offres et demandes</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/candidat">
+              <i class="fas fa-plus-circle me-2"></i> Offres actuelles
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/mescandidatures">
+              <i class="fas fa-plus-circle me-2"></i> Mes candidatures
+            </a>
+          </li>
+        </ul>
+        <hr class="bg-light my-4">
+        <h5 class="text-center mb-4"> Mon compte</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="#">
+              <i class="fas fa-plus-circle me-2"></i> Mon compte
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/modifiecompte">
+              <i class="fas fa-list me-2"></i> Modifier mon compte
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/accueil">
+              <i class="fas fa-home me-2"></i> Deconnecter
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main" class="col-md-10 ms-sm-auto px-4" style="height: 130px; background-color: rgb(30, 189, 64);">
+      <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center py-3 px-4 shadow-sm">
+    <!-- Logo/Photo -->
+    <div class="d-flex align-items-center" >
+      <img class="" >
+    </div>
+    <div class="d-flex align-items-center" >
+      <img class="ab" >
+    </div>
+    <!-- Navigation Buttons -->
+    <div>
+      <button class="btn btn-outline-primary me-2" style="color: white;">Accueil</button>
+      <button class="btn btn-outline-success me-2" style="color: white;">Contact</button>
+      <button class="btn btn-outline-secondary" style="color: white;" >Rechercher</button>
+    </div>
+  </header>
+
+    <!-- Formulaire de candidature -->
+
+      <div class="row mt-4">
+        <div class="col-md-6" style="text-align: center;top: 0;left: 0;width: 50%;height: 100%;background-color: blue;
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%); "><br><br><br><br><br><br><br><br><br>
+          <p style="background-color: green; border-radius: 100px; color:white;">Veuillez soumettre votre depot de candidature<br><p>au poste de tuteur</p>Veuillez renseignez tout les champs(obligatoire) </p>
+          <p>.</p>
+          <p>.</p>
+          <p>.</p>
+          <p>.</p>
+          <p>.</p>
+        </div>
+        <div class="col-md-6">
+          <h3 class="text-center">Demande de Candidature</h3>
+          <form [formGroup]="candidateForm" (ngSubmit)="onSubmit()" class="row g-3">
+            <div class="col-md-6">
+              <label for="nom" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="nom" formControlName="nom" placeholder="NOM" />
+              <div *ngIf="f['nom'].touched && f['nom'].invalid" class="text-danger">
+                <small *ngIf="f['nom'].errors?.['required']">Le nom est obligatoire.</small>
+                <small *ngIf="f['nom'].errors?.['minlength']">Le nom doit comporter au moins 2 caractères.</small>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <label for="prenom" class="form-label">Prénom</label>
+              <input type="text" class="form-control" id="prenom" formControlName="prenom" placeholder="PRÉNOM" />
+              <div *ngIf="f['prenom'].touched && f['prenom'].invalid" class="text-danger">
+                <small *ngIf="f['prenom'].errors?.['required']">Le prénom est obligatoire.</small>
+                <small *ngIf="f['prenom'].errors?.['minlength']">Le prénom doit comporter au moins 2 caractères.</small>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="adresse" class="form-label">Adresse</label>
+              <input type="text" class="form-control" id="adresse" placeholder="ADRESSE">
+            </div>
+            
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email" placeholder="exemple@gmail.com" />
+              <div *ngIf="f['email'].touched && f['email'].invalid" class="text-danger">
+                <small *ngIf="f['email'].errors?.['required']">L'email est obligatoire.</small>
+                <small *ngIf="f['email'].errors?.['email']">Veuillez entrer un email valide.</small>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="situation" class="form-label">Situation Candidat</label>
+              <select class="form-select" id="situation">
+                <option>NOUVEAU</option>
+                <option>ANCIEN</option>
+              </select>
+            </div>
+            
+            <!--<div class="col-md-6">
+              <label for="photo" class="form-label">Photo</label>
+              <input type="file" class="form-control" id="photo" formControlName="photo" />
+              <div *ngIf="f['photo'].touched && f['photo'].invalid" class="text-danger">
+                <small *ngIf="f['photo'].errors?.['required']">Veuillez importer une photo.</small>
+              </div>
+            </div>-->
+            
+            <div class="col-md-6">
+              <label for="motivation" class="form-label">Lettre de Motivation</label>
+              <input type="file"class="form-control" id="motivation" formControlName="motivation" placeholder="Votre lettre">
+              <div *ngIf="f['motivation'].touched && f['motivation'].invalid" class="text-danger">
+                <small *ngIf="f['motivation'].errors?.['required']">La lettre de motivation est obligatoire.</small>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <label for="diplomes" class="form-label">Diplômes</label>
+              <input type="file" class="form-control" id="diplomes" formControlName="diplomes" placeholder="Vos diplômes" />
+              <div *ngIf="f['diplomes'].touched && f['diplomes'].invalid" class="text-danger">
+                <small *ngIf="f['diplomes'].errors?.['required']">Les diplômes sont obligatoires.</small>
+              </div>
+            </div>
+            
+          
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-success" [disabled]="candidateForm.invalid">SOUMETTRE</button>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+    </main>
+
+

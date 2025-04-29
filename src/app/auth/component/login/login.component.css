@@ -1,0 +1,96 @@
+.outer {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../assets/R.jpeg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+}
+
+.panel-heading h3 {
+  color: #28a745;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.panel-body {
+  margin-top: 20px;
+}
+
+.input-field {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ced4da;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+}
+
+.input-field input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 15px;
+  color: #495057;
+}
+
+.input-field span {
+  color: #28a745;
+  font-size: 18px;
+}
+
+.btn-success {
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: bold;
+  background-color: #28a745;
+  border: none;
+  font-size: 16px;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border: none;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .panel {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .panel {
+    padding: 25px 15px;
+    max-width: 95%;
+  }
+
+  .panel-heading h3 {
+    font-size: 20px;
+  }
+}

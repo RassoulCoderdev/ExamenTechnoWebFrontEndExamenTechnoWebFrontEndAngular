@@ -1,0 +1,112 @@
+<div class="container-fluid" >
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-none d-md-block bg-custom-blue sidebar text-white vh-100 shadow-lg">
+      <div class="sidebar-sticky px-3 py-4"><br><br><br><br><hr>
+        <h5 class="text-center mb-4">Gestion des Comptes</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/admin">
+              <i class="fas fa-plus-circle me-2"></i> Postuler Un Cours
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/listescandidat">
+              <i class="fas fa-plus-circle me-2"></i> Liste des etudiants
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/listeadmin">
+              <i class="fas fa-plus-circle me-2"></i> Liste des administrateurs
+            </a>
+          </li>
+        </ul>
+        <hr class="bg-light my-4">
+        <h5 class="text-center mb-4"> Gestion Candidatures</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/auth/inscription">
+              <i class="fas fa-plus-circle me-2"></i> inscrire un etudiant
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/auth/inscriptionadmin">
+              <i class="fas fa-plus-circle me-2"></i> inscrire un administrateur
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center py-2" href="/accueil" (click)="onLogout()">
+              <i class="fas fa-home me-2" ></i> Deconnecter
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main" class="col-md-10 ms-sm-auto px-4" style="height: 130px; background-color: rgb(30, 189, 64);">
+      <!-- Header -->
+      <header class="d-flex justify-content-between align-items-center py-3 px-4 shadow-sm">
+        <!-- Logo/Photo -->
+        <div class="d-flex align-items-center" >
+          <img class="" >
+        </div>
+        <div class="d-flex align-items-center" >
+          <img class="ab" >
+        </div>
+        <!-- Navigation Buttons -->
+        <div>
+          <button class="btn btn-outline-primary me-2" style="color: white;">Accueil</button>
+          <button class="btn btn-outline-success me-2" style="color: white;">Contact</button>
+          <button class="btn btn-outline-secondary" style="color: white;" >Rechercher</button>
+        </div>
+      </header>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+        <h2 class="font-weight-bold">Tableau de Bord</h2>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card text-center bg-warning text-white shadow-sm rounded-lg">
+            <div class="card-body">
+              <i class="fas fa-users fa-3x mb-3"></i>
+              <h5 class="card-title">26 Etudiants</h5>
+              <p class="card-text">Plus d'infos</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center bg-primary text-white shadow-sm rounded-lg">
+            <div class="card-body">
+              <i class="fas fa-file-alt fa-3x mb-3"></i>
+              <h5 class="card-title">6 Cours</h5>
+              <p class="card-text">Plus d'infos</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center bg-success text-white shadow-sm rounded-lg">
+            <div class="card-body">
+              <i class="fas fa-bullhorn fa-3x mb-3"></i>
+              <h5 class="card-title">8 Commentaires</h5>
+              <p class="card-text">Plus d'infos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table Section -->
+      <div class="mt-5">
+        <h4 class="font-weight-bold mb-4"></h4>
+
+      </div>
+      <button class="btn btn-secondary mt-3 shadow-sm rounded-lg">
+        <i class="fas fa-arrow-left me-2"></i> Retour
+      </button>
+
+    </main>
+  </div>
+</div>

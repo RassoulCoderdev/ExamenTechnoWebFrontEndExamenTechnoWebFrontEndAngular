@@ -1,0 +1,39 @@
+<h4 class="text-center mb-4">Liste des Cours</h4>
+
+<div class="cours-container">
+  @for (annonce of annonces; track annonce.idannnce) {
+    <div class="cours-card">
+      <h5 class="cours-titre">{{ annonce.titre }}</h5>
+      <p><strong>Description :</strong> {{ annonce.description }}</p>
+      <p><strong>Année de début :</strong> {{ annonce.annedebut }}</p>
+      <p><strong>Date de Fin :</strong> {{ annonce.datepubli }}</p>
+      <p><strong>Statut :</strong> {{ annonce.statutdto }}</p>
+
+      <div class="btn-group">
+        @if (authService.isAdmin()) {
+          <button class="btn btn-danger" (click)="supprimerAnnonce(annonce)">Supprimer</button>
+          <button class="btn btn-success">Modifier</button>
+        }
+        <button class="btn btn-primary" (click)="afficherCommentaires(annonce.idannnce)">
+          {{ commentairesAffiches[annonce.idannnce] ? 'Fermer' : 'Voir / Commenter' }}
+        </button>
+      </div>
+
+      @if (commentairesAffiches[annonce.idannnce]) {
+        <div class="commentaires-section">
+          @for (com of commentairesMap.get(annonce.idannnce); track com.id) {
+            <p><strong>{{ com.auteurEmail }}</strong> : {{ com.contenu }} ({{ com.dateCreation | date:'short' }})</p>
+          }
+
+          @if (!authService.isAdmin()) {
+            <textarea [(ngModel)]="nouveauCommentaire[annonce.idannnce]"
+                      placeholder="Votre commentaire"
+                      rows="2"
+                      class="form-control mb-2"></textarea>
+            <button class="btn btn-success btn-sm" (click)="ajouterCommentaire(annonce.idannnce)">Envoyer</button>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>

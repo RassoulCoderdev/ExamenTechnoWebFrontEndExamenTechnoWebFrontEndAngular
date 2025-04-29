@@ -1,0 +1,40 @@
+   <!-- Tableau des Annonces -->
+   <h4 class="text-center mb-4">Liste des Etudiants</h4>
+   <table class="table table-bordered table-striped">
+     <thead class="table-dark">
+       <tr>
+         <th>prenom etudiant</th>
+         <th>Nom etudiant</th>
+         <th>Email etudiant</th>
+         <th>username</th>
+         <th>INE</th>
+         <th>promo</th>
+         <th>Activés</th>
+         @if(authService.isAdmin()) {
+           <th>Supprimer</th>
+         }
+       </tr>
+     </thead>
+     <tbody>
+      @for (annonce of users;track annonce.id)
+      {
+       <tr>
+         <td>{{ annonce.prenom }}</td>
+         <td>{{ annonce.nom }}</td>
+         <td>{{ annonce.email }}</td>
+         <td>{{ annonce.username }}</td>
+         <td>{{ annonce.ine }}</td>
+         <td>{{ annonce.promo }}</td>
+         <td>{{ annonce.enabled}}</td>
+         <script>console.log("je suis sage")</script>
+         @if(authService.isAdmin()) {
+           <td><a class="btn btn-danger" (click)="supprimerUser(annonce)">Supprimer</a></td>
+          }
+
+       </tr>}
+       <tr *ngIf="!users || users.length === 0">
+         <td colspan="4" class="text-center">Aucun  Etudiant ajoutée pour le moment.</td>
+       </tr>
+
+     </tbody>
+   </table>

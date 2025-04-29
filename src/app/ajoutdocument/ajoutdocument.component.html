@@ -1,0 +1,18 @@
+<form [formGroup]="documentForm" (ngSubmit)="onSubmit()" class="container mt-4">
+  <!-- Form group for the document input -->
+  <div class="mb-3">
+    <label for="document" class="form-label">Document:</label>
+    <label for="motivation" class="form-label">Motivation:</label>
+    <input id="motivation" type="file" (change)="onFileSelected($event)" formControlName="motivation" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="cv" class="form-label">CV:</label>
+    <input id="cv" type="file" (change)="onFileSelected($event)" formControlName="cv" class="form-control">
+  </div>
+
+  <!-- Submit button -->
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary" [disabled]="documentForm.invalid || !selectedFile">Ajouter Document</button>
+  </div>
+  
+</form>

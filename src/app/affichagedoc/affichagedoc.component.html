@@ -1,0 +1,49 @@
+<div class="container mt-4">
+    <div class="card shadow p-4">
+      <h3 class="text-center mb-4">Liste des Candidatures</h3>
+      <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Nom Candidature</th>
+            <th>ID Annonce</th>
+            <th>Utilisateur</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let candidature of candidatures; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ candidature.nomcandidature }}</td>
+            <td>{{ candidature.idannonce }}</td>
+            <td>{{ candidature.usernamedto }}</td>
+            <td>
+              <button class="btn btn-warning btn-sm me-2">Modifier</button>
+              <a class="btn btn-success btn-sm" [routerLink]="['/ajoutdoc', candidature.idcandidature]">Suivant</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Liste des Documents</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom du fichier</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doc of document">
+          <td>{{ doc.name}}</td>
+          <td>
+            <a [href]="doc.url" target="_blank">Télécharger</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

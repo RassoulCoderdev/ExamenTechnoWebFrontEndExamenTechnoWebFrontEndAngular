@@ -1,0 +1,31 @@
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  padding-top: 0px;
+}
+
+.sidebar .nav-link {
+  font-size: 12.9px;
+  padding: 10px;
+}
+
+.table-responsive {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.ab{
+  background: url('../../admin/img/unchk.png');
+  width: 500px;
+  height: 100px;
+}
+.bg-custom-blue {
+  background-color: black; /* Couleur bleue personnalisée */
+}
+.bg-custom-green{
+  background-color: #0ff42e;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}

@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <div class="card shadow p-4">
+    <h3 class="text-center mb-4">Ajouter une Candidature</h3>
+    <form [formGroup]="candidatureForm" (click)="onSubmit()">
+      <!-- Champ Nom Candidature -->
+      <div class="mb-3">
+        <label for="nomcandidature" class="form-label">Nom de la Candidature :</label>
+        <input id="nomcandidature" formControlName="nomcandidature" type="text" class="form-control" required>
+      </div>
+
+      <!-- Bouton Suivant -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" [disabled]="candidatureForm.invalid">Suivant</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Liste des Candidatures -->
+  <div class="mt-5">
+    <h2 class="text-center">Liste des Candidatures</h2>
+    <ul class="list-group mt-3">
+      @for (candidature of candidatures; track candidature.idcandidature) {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span><strong>{{ candidature.nomcandidature }}</strong> (ID Annonce: {{ candidature.idannonce }})</span>
+          @if (!authService.isAdmin()) {
+            <div>
+              <a class="btn btn-warning btn-sm me-2">Modifier</a>
+              <a class="btn btn-success btn-sm" [routerLink]="[candidature.idcandidature]">Suivant</a>
+            </div>
+          }
+        </li>
+      }
+    </ul>
+  </div>
+</div>
+<app-affichagedoc/>

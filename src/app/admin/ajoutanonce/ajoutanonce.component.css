@@ -1,0 +1,17 @@
+.modal-content {
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.btn-close {
+  background-color: #fff;
+  border: none;
+}
+
+button[type="button"] {
+  border-radius: 30px;
+}
